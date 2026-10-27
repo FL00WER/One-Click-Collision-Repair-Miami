@@ -6,12 +6,10 @@
   <title>One Click Collision Repair Miami | Fast Photo Estimates & Mobile Auto Body</title>
   <meta name="description" content="Miami collision repair, dent removal, bumper repair, and custom auto paint. Send photos of your vehicle damage via WhatsApp or Messenger for a fast, free quote." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -73,7 +71,6 @@
       background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
     }
 
-    /* Fixed Single-Row Dynamic Island */
     #dynamic-island {
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
@@ -81,6 +78,15 @@
     }
     #dynamic-island:hover {
       border-color: rgba(223, 12, 20, 0.45);
+    }
+
+    /* Ocultar barra de scroll en celulares para estética limpia */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     .glass-card {
@@ -142,15 +148,14 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 
   <!-- ==========================================
-       DYNAMIC ISLAND NAVIGATION (FIXED PILL, NO DROPDOWN)
+       DYNAMIC ISLAND NAVIGATION (RESPONSIVE FIX)
   =========================================== -->
-  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
-    <div id="dynamic-island" class="pointer-events-auto bg-carbon-950/95 border border-white/15 shadow-island rounded-full px-6 py-3 w-[95vw] max-w-[680px]">
+  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-3 pointer-events-none">
+    <div id="dynamic-island" class="pointer-events-auto bg-carbon-950/95 border border-white/15 shadow-island rounded-2xl sm:rounded-full px-4 sm:px-6 py-2.5 w-[96vw] max-w-[720px]">
       
-      <div class="flex items-center justify-between gap-4">
-        <!-- Brand Logo -->
-        <a href="#" class="flex items-center gap-3 group shrink-0">
-          <div class="w-10 h-10 rounded-full bg-black border border-brand-red/50 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4">
+        <a href="#" class="flex items-center gap-2.5 group shrink-0">
+          <div class="w-9 h-9 rounded-full bg-black border border-brand-red/50 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
             <img src="ONE CLICK - MARCAS DE AGUA-41.png" alt="1Click Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
             <svg style="display:none" class="w-7 h-7" viewBox="0 0 100 100" fill="none">
               <circle cx="50" cy="50" r="48" fill="#000000"/>
@@ -166,20 +171,20 @@
 
           <div class="flex flex-col">
             <div class="flex items-center gap-1.5">
-              <span class="font-brand font-black text-sm tracking-wider text-white">
-                <span class="text-brand-red">1</span>CLICK
+              <span class="font-brand font-black text-xs sm:text-sm tracking-wider text-white">
+                CLICK
               </span>
-              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 MIAMI
               </span>
             </div>
-            <span class="text-[10px] text-zinc-400 leading-none hidden sm:inline whitespace-nowrap">Collision Repair & Mobile Body Shop</span>
+            <span class="text-[9px] text-zinc-400 leading-none hidden sm:inline whitespace-nowrap">Collision Repair & Mobile Body Shop</span>
           </div>
         </a>
 
-        <!-- Desktop Quick Links (Centered & Clean) -->
-        <nav class="flex items-center gap-6 text-xs font-semibold text-zinc-300 whitespace-nowrap">
+        <!-- Contenedor con scroll horizontal en celulares para que nunca se corte -->
+        <nav class="w-full sm:w-auto overflow-x-auto no-scrollbar flex items-center justify-center sm:justify-end gap-4 sm:gap-5 text-[11px] sm:text-xs font-semibold text-zinc-300 whitespace-nowrap py-1">
           <a href="#services" class="hover:text-white transition">Services</a>
           <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
           <a href="#real-work" class="hover:text-white transition">Our Work</a>
@@ -236,7 +241,6 @@
         Quality work you can trust. Send us photos of your vehicle’s damage on WhatsApp or Messenger for a <strong class="text-white">fast, free quote</strong> — we come to your location with our mobile repair service or schedule you at our partner body shops.
       </p>
 
-      <!-- Aligned Buttons (Equal width via flex-1, White WhatsApp text, Dynamic Island Messenger gradient) -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto w-full">
         <a href="#" data-wa-link class="btn-shine w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white font-extrabold text-base md:text-lg px-6 py-4 rounded-full shadow-wa-glow transform hover:scale-[1.02] transition">
           <svg class="w-6 h-6 fill-current text-white shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.529 5.856l-1.529 5.584 5.735-1.504c1.676.912 3.597 1.434 5.64 1.434 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
@@ -277,7 +281,7 @@
   </section>
 
   <!-- ==========================================
-       OUR SERVICES (6 CARDS)
+       OUR SERVICES
   =========================================== -->
   <section id="services" class="py-20 px-4">
     <div class="max-w-5xl mx-auto">
@@ -331,7 +335,7 @@
   </section>
 
   <!-- ==========================================
-       HOW IT WORKS ("EASY AS 1-2-3")
+       HOW IT WORKS
   =========================================== -->
   <section id="how-it-works" class="py-20 px-4 bg-carbon-900/70 border-y border-white/10">
     <div class="max-w-5xl mx-auto">
@@ -367,7 +371,7 @@
   </section>
 
   <!-- ==========================================
-       REAL WORK & EMBEDDED FACEBOOK REELS (9:16)
+       REAL WORK & EMBEDDED FACEBOOK REELS
   =========================================== -->
   <section id="real-work" class="py-20 px-4">
     <div class="max-w-6xl mx-auto">
@@ -382,19 +386,13 @@
           Watch our real collision, dent, bumper, and mobile repairs across Miami & Hollywood directly from our official Facebook page.
         </p>
       </div>
-
-      <!-- 4 Vertical Facebook Reels Grid -->
       <div id="fb-reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-        <!-- Rendered automatically by script -->
-      </div>
-
-      <!-- Real Customer Savings Banner -->
-      
+      </div>    
     </div>
   </section>
 
   <!-- ==========================================
-       QUICK WHATSAPP QUOTE BUILDER FORM
+       QUICK WHATSAPP QUOTE BUILDER FORM (ALIGNED BUTTONS FIX)
   =========================================== -->
   <section id="estimate-form" class="py-20 px-4 bg-carbon-900/60 border-t border-white/10">
     <div class="max-w-xl mx-auto">
@@ -443,13 +441,18 @@
             class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white placeholder-zinc-500 transition"></textarea>
         </div>
 
-        <button type="submit" class="btn-shine w-full flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-carbon-950 font-extrabold text-base py-4 rounded-xl shadow-wa-glow transition cursor-pointer">
-          <span>💬 GET A FREE QUOTE ON WHATSAPP</span>
-        </button>
+        <!-- Botones con ancho 100% simétrico y perfectamente alineados -->
+        <div class="pt-2 flex flex-col sm:flex-row gap-3 w-full">
+          <button type="submit" class="btn-shine w-full sm:flex-1 flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-white font-extrabold text-xs sm:text-sm py-4 px-4 rounded-xl shadow-wa-glow transition cursor-pointer">
+            <svg class="w-5 h-5 fill-current text-white shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.529 5.856l-1.529 5.584 5.735-1.504c1.676.912 3.597 1.434 5.64 1.434 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+            <span class="truncate">WHATSAPP QUOTE</span>
+          </button>
 
-        <a href="#" data-msg-link target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 bg-black hover:bg-carbon-800 text-zinc-200 border border-messenger/40 font-semibold text-sm py-3.5 rounded-xl transition">
-          <span>Or Chat with Us on Facebook Messenger</span>
-        </a>
+          <a href="#" data-msg-link target="_blank" rel="noopener" class="btn-shine w-full sm:flex-1 flex items-center justify-center gap-2.5 bg-messenger-grad hover:brightness-110 text-white font-extrabold text-xs sm:text-sm py-4 px-4 rounded-xl shadow-msg-glow transition">
+            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+            <span class="truncate">MESSENGER CHAT</span>
+          </a>
+        </div>
       </form>
     </div>
   </section>
@@ -458,12 +461,8 @@
        FOOTER
   =========================================== -->
   <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-zinc-500 bg-black">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-5xl mx-auto flex justify-center items-center">
       <p>© 2026 <strong class="text-white">One Click Collision Repair Miami</strong> • Proudly Serving Miami, Hollywood & Surrounding Areas.</p>
-      <div class="flex items-center gap-4">
-        <a href="#" data-wa-link class="text-whatsapp hover:underline font-medium">WhatsApp Quote</a>
-        <a href="#" data-msg-link target="_blank" rel="noopener" class="text-sky-400 hover:underline font-medium">Facebook Messenger</a>
-      </div>
     </div>
   </footer>
 
@@ -473,7 +472,7 @@
   <script>
     const WHATSAPP_NUMBER = "5493513102089";
     const DEFAULT_WA_MESSAGE = "Hi One Click Collision Repair Miami! I'd like to get a FREE QUOTE. Here are the photos of my vehicle's damage:";
-    const MESSENGER_URL = "https://www.facebook.com/reel/1459970119356056";
+    const MESSENGER_URL = "https://www.facebook.com/profile.php?id=61590808599650";
 
     const defaultWaUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_WA_MESSAGE)}`;
     document.querySelectorAll('[data-wa-link]').forEach(el => {
@@ -486,9 +485,6 @@
       el.setAttribute('href', MESSENGER_URL);
     });
 
-    // =====================================================
-    // 4 OFFICIAL FACEBOOK REELS
-    // =====================================================
     function extractFbVideoId(url) {
       const match = url.match(/(?:reel\/|videos\/|v=)(\d+)/);
       return match ? match[1] : null;
@@ -538,7 +534,6 @@
         <div class="glass-card rounded-2xl overflow-hidden flex flex-col border border-white/10">
           <div class="relative w-full bg-carbon-900 flex flex-col items-center justify-center min-h-[476px] overflow-hidden">
             
-            <!-- Fallback behind iframe -->
             <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
               <div class="w-12 h-12 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red mb-3">
                 ▶
@@ -550,7 +545,6 @@
               </button>
             </div>
 
-            <!-- Official Facebook Video Plugin Iframe -->
             <iframe 
               src="${embedSrc}" 
               width="267" 
@@ -582,7 +576,6 @@
       `;
     }).join('');
 
-    // Quote Form
     document.getElementById('wa-quote-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('q-name').value.trim();
