@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Click Collision Repair Miami | Fast Photo Estimates & Mobile Auto Body</title>
+  <meta name="description" content="Miami collision repair, dent removal, bumper repair, and custom auto paint. Send photos of your vehicle damage via WhatsApp or Messenger for a fast, free quote." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carbon: {
+              950: '#000000',
+              900: '#0a0a0d',
+              800: '#121217',
+              700: '#1c1c24',
+            },
+            brand: {
+              red: '#df0c14',
+              redGlow: '#ff1e27',
+              darkRed: '#8f060b',
+            },
+            whatsapp: {
+              DEFAULT: '#25D366',
+              dark: '#1da851',
+            },
+            messenger: {
+              DEFAULT: '#0084FF',
+              pink: '#A033FF',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            brand: ['Orbitron', 'Syncopate', 'sans-serif'],
+          },
+          boxShadow: {
+            'red-glow': '0 0 35px -5px rgba(223, 12, 20, 0.55)',
+            'wa-glow': '0 0 35px -5px rgba(37, 211, 102, 0.5)',
+            'msg-glow': '0 0 30px -5px rgba(0, 132, 255, 0.45)',
+            'island': '0 20px 50px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .bg-carbon-grid {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(223, 12, 20, 0.20) 0%, transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(223, 12, 20, 0.09) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    /* Fixed Single-Row Dynamic Island */
+    #dynamic-island {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #dynamic-island:hover {
+      border-color: rgba(223, 12, 20, 0.45);
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(18, 18, 24, 0.9) 0%, rgba(8, 8, 11, 0.96) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(223, 12, 20, 0.5);
+      box-shadow: 0 16px 40px -12px rgba(223, 12, 20, 0.28);
+    }
+
+    .racing-slash {
+      position: relative;
+    }
+    .racing-slash::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%) skewX(-24deg);
+      width: 68px;
+      height: 4px;
+      background: #df0c14;
+      border-radius: 2px;
+      box-shadow: 0 0 12px rgba(223, 12, 20, 0.8);
+    }
+
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: all 0.65s ease;
+    }
+    .btn-shine:hover::before {
+      left: 130%;
+    }
+
+    .bg-messenger-grad {
+      background: linear-gradient(135deg, #00B2FF 0%, #006AFF 50%, #9B30FF 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-carbon-grid antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- Official Facebook JavaScript SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+
+  <!-- ==========================================
+       DYNAMIC ISLAND NAVIGATION (FIXED PILL, NO DROPDOWN)
+  =========================================== -->
+  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+    <div id="dynamic-island" class="pointer-events-auto bg-carbon-950/95 border border-white/15 shadow-island rounded-full px-6 py-3 w-[95vw] max-w-[680px]">
+      
+      <div class="flex items-center justify-between gap-4">
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full bg-black border border-brand-red/50 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+            <img src="ONE CLICK - MARCAS DE AGUA-41.png" alt="1Click Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <svg style="display:none" class="w-7 h-7" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="48" fill="#000000"/>
+              <path d="M36 26H58V34H42V44H58V52H36C33 52 31 50 31 47V31C31 28 33 26 36 26Z" fill="#ffffff"/>
+              <path d="M62 26H70V44H83L80 52H62V26Z" fill="#ffffff"/>
+              <path d="M86 26H94V52H86V26Z" fill="#ffffff"/>
+              <path d="M36 56H58V64H42V74H58V82H36C33 82 31 80 31 77V66H40V74" fill="#ffffff"/>
+              <path d="M62 56H70V66L82 56H93L78 69L94 82H82L70 71V82H62V56Z" fill="#ffffff"/>
+              <path d="M18 42L27 39L29 51L21 53L18 42ZM14 60L21 58L24 54L32 54L32 61L26 62L24 82H15L18 63L13 64L14 60Z" fill="#df0c14"/>
+              <path d="M34 57C40 53 47 52 52 55C48 61 42 62 34 60Z" fill="#df0c14"/>
+            </svg>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="font-brand font-black text-sm tracking-wider text-white">
+                <span class="text-brand-red">1</span>CLICK
+              </span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                MIAMI
+              </span>
+            </div>
+            <span class="text-[10px] text-zinc-400 leading-none hidden sm:inline whitespace-nowrap">Collision Repair & Mobile Body Shop</span>
+          </div>
+        </a>
+
+        <!-- Desktop Quick Links (Centered & Clean) -->
+        <nav class="flex items-center gap-6 text-xs font-semibold text-zinc-300 whitespace-nowrap">
+          <a href="#services" class="hover:text-white transition">Services</a>
+          <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
+          <a href="#real-work" class="hover:text-white transition">Our Work</a>
+          <a href="#estimate-form" class="hover:text-white transition">Quick Estimate</a>
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION
+  =========================================== -->
+  <section class="relative pt-32 pb-16 md:pt-36 md:pb-24 px-4 overflow-hidden">
+    <div class="absolute top-12 left-1/2 -translate-x-1/2 w-[540px] h-[280px] bg-brand-red/25 blur-[140px] pointer-events-none rounded-full"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      
+      <div class="inline-flex items-center justify-center mb-7">
+        <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-black border-2 border-brand-red/50 shadow-red-glow flex items-center justify-center overflow-hidden p-1">
+          <img 
+            src="ONE CLICK - MARCAS DE AGUA-41.png" 
+            alt="One Click Collision Repair Miami Official Logo" 
+            class="w-full h-full object-contain rounded-full"
+            onerror="this.style.display='none'; document.getElementById('hero-logo-svg').classList.remove('hidden');"
+          />
+
+          <svg id="hero-logo-svg" class="hidden w-full h-full" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" r="118" fill="#000000"/>
+            <path d="M96 64H134V81H100C96.5 81 95 82.8 95 86V98C95 101.2 96.5 103 100 103H134V120H96C84 120 78 113.5 78 101V83C78 70.5 84 64 96 64Z" fill="#FFFFFF"/>
+            <path d="M139 64H156V103H185L179 120H139V64Z" fill="#FFFFFF"/>
+            <path d="M189 64H206V120H189V64Z" fill="#FFFFFF"/>
+            <path d="M96 125H135V142H101C97 142 95 144 95 148V157C95 161 97 163 101 163H135V180H96C84 180 78 173.5 78 161V146H95V155" fill="#FFFFFF"/>
+            <path d="M140 125H157V148L182 125H204L174 152L205 180H182L157 157V180H140V125Z" fill="#FFFFFF"/>
+            <path d="M51 98L73 91L74 95L50 102L51 98Z" fill="#df0c14"/>
+            <path d="M53 103L73 97L76 118L69 124L59 126L53 103Z" fill="#df0c14"/>
+            <path d="M47 137L62 135L65 126L71 126L72 132L83 130V143L73 142L69 145C69 152 71 157 75 160L72 162C67 160 65 154 65 147L61 148L57 180H41L47 144L39 145V140L47 137Z" fill="#df0c14"/>
+            <path d="M86 135C95 132 103 127 110 126C113 125 115 128 111 131C106 135 99 136 96 138C105 136 115 127 121 130C125 132 123 138 116 140C109 142 103 141 101 143C106 144 113 145 113 149C113 153 106 154 100 151C95 148 92 145 86 143V135Z" fill="#df0c14"/>
+            <circle cx="125" cy="134" r="3.5" fill="#df0c14"/>
+            <circle cx="106" cy="155" r="2.5" fill="#df0c14"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="text-xs md:text-sm font-bold tracking-[0.24em] text-brand-red uppercase mb-3">
+        Collision Repair • Auto Body • Paint • Mobile Service
+      </p>
+
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.08] mb-5">
+        Collision Repair & <span class="text-brand-red">Auto Body</span> in Miami, FL
+      </h1>
+
+      <p class="text-zinc-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-9 leading-relaxed">
+        Quality work you can trust. Send us photos of your vehicle’s damage on WhatsApp or Messenger for a <strong class="text-white">fast, free quote</strong> — we come to your location with our mobile repair service or schedule you at our partner body shops.
+      </p>
+
+      <!-- Aligned Buttons (Equal width via flex-1, White WhatsApp text, Dynamic Island Messenger gradient) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto w-full">
+        <a href="#" data-wa-link class="btn-shine w-full sm:flex-1 inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white font-extrabold text-base md:text-lg px-6 py-4 rounded-full shadow-wa-glow transform hover:scale-[1.02] transition">
+          <svg class="w-6 h-6 fill-current text-white shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.529 5.856l-1.529 5.584 5.735-1.504c1.676.912 3.597 1.434 5.64 1.434 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+          <span>GET A FREE QUOTE</span>
+        </a>
+
+        <a href="#" data-msg-link target="_blank" rel="noopener" class="btn-shine w-full sm:flex-1 inline-flex items-center justify-center gap-2.5 bg-messenger-grad text-white font-bold text-base md:text-lg px-6 py-4 rounded-full shadow-msg-glow hover:brightness-110 transition">
+          <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+          <span>Chat on Messenger</span>
+        </a>
+      </div>
+
+      <p class="mt-4 text-xs text-zinc-400 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-whatsapp animate-ping"></span>
+        Send 2–3 photos of the damage & receive your free estimate right on your phone.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TRUST BAR
+  =========================================== -->
+  <section class="border-y border-white/10 bg-carbon-900/90 py-5 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+      <div class="flex items-center justify-center gap-2.5 text-sm font-semibold text-white">
+        <span class="w-7 h-7 rounded-full bg-brand-red/20 border border-brand-red/50 flex items-center justify-center text-brand-red">✓</span>
+        <span>Quality You Can Trust</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 text-sm font-semibold text-white">
+        <span class="w-7 h-7 rounded-full bg-brand-red/20 border border-brand-red/50 flex items-center justify-center text-brand-red">⚡</span>
+        <span>Fast Turnaround & Photo Quotes</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 text-sm font-semibold text-white">
+        <span class="w-7 h-7 rounded-full bg-brand-red/20 border border-brand-red/50 flex items-center justify-center text-brand-red">🤝</span>
+        <span>Honest Service & Mobile Repair</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       OUR SERVICES (6 CARDS)
+  =========================================== -->
+  <section id="services" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white racing-slash inline-block">
+          Our <span class="text-brand-red">Services</span>
+        </h2>
+        <p class="text-zinc-400 text-sm md:text-base mt-5 max-w-xl mx-auto">
+          Everything your car needs after an accident — repaired at your location or at our partner shops in Miami.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red mb-4 text-xl">🚗</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Collision Repair</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Full collision damage repair for all vehicle makes and models to restore factory body lines and safety.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red mb-4 text-xl">🔨</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Dent & Auto Body</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Precision dent pulling, creases, door dings, and panel reshaping without expensive replacements.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red mb-4 text-xl">🎨</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Painting & Scratch Removal</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Computerized color matching and high-gloss clear coat finishes that blend seamlessly with your car.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red mb-4 text-xl">🛡️</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Bumper Repair</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Cracked, dented, or scraped plastic and metal bumpers restored and painted in record time.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-brand-red/20 border border-brand-red/50 flex items-center justify-center text-brand-red mb-4 text-xl">📍</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Mobile Service (We Come to You)</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Professional repairs performed right at your driveway or workplace across Miami & Hollywood.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-whatsapp/15 border border-whatsapp/40 flex items-center justify-center text-whatsapp mb-4 text-xl">📸</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Free Photo Estimates</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Send photos on WhatsApp or Messenger and get an honest, transparent price before visiting a shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       HOW IT WORKS ("EASY AS 1-2-3")
+  =========================================== -->
+  <section id="how-it-works" class="py-20 px-4 bg-carbon-900/70 border-y border-white/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-brand-red text-white">
+          Easy As 1 - 2 - 3
+        </span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mt-3 racing-slash inline-block">
+          How It <span class="text-brand-red">Works</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-full bg-brand-red text-white font-brand font-bold text-sm flex items-center justify-center mb-4 shadow-red-glow">1</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Send Us Photos</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Click <strong class="text-white">“Get a Free Quote”</strong> and send photos of your vehicle’s damage via WhatsApp or Messenger.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-full bg-brand-red text-white font-brand font-bold text-sm flex items-center justify-center mb-4 shadow-red-glow">2</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Get Your Free Quote</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">We review the photos and send you a fast, honest price estimate — saving you up to 50% compared to big shops.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-full bg-brand-red text-white font-brand font-bold text-sm flex items-center justify-center mb-4 shadow-red-glow">3</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Repair & Delivery</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">We come to your location with our mobile unit or schedule your car at one of our trusted Miami partner shops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       REAL WORK & EMBEDDED FACEBOOK REELS (9:16)
+  =========================================== -->
+  <section id="real-work" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-brand-red/20 text-brand-red border border-brand-red/40">
+          Verified Results in Miami
+        </span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mt-3 racing-slash inline-block">
+          Our Real <span class="text-brand-red">Work & Reels</span>
+        </h2>
+        <p class="text-zinc-400 text-sm md:text-base mt-5 max-w-2xl mx-auto">
+          Watch our real collision, dent, bumper, and mobile repairs across Miami & Hollywood directly from our official Facebook page.
+        </p>
+      </div>
+
+      <!-- 4 Vertical Facebook Reels Grid -->
+      <div id="fb-reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <!-- Rendered automatically by script -->
+      </div>
+
+      <!-- Real Customer Savings Banner -->
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       QUICK WHATSAPP QUOTE BUILDER FORM
+  =========================================== -->
+  <section id="estimate-form" class="py-20 px-4 bg-carbon-900/60 border-t border-white/10">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white racing-slash inline-block">
+          Book Your <span class="text-brand-red">Free Estimate</span>
+        </h2>
+        <p class="text-zinc-400 text-sm mt-5">
+          Fill in your details and WhatsApp will open with your message ready so you can attach photos of the damage.
+        </p>
+      </div>
+
+      <form id="wa-quote-form" class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">Your Name</label>
+          <input type="text" id="q-name" placeholder="Your name" required
+            class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white placeholder-zinc-500 transition" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">Vehicle Make, Model & Year</label>
+            <input type="text" id="q-vehicle" placeholder="e.g. 2021 Toyota Camry" required
+              class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white placeholder-zinc-500 transition" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">Your City / Area in Miami</label>
+            <input type="text" id="q-area" placeholder="e.g. Miami, Hollywood, Doral..."
+              class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white placeholder-zinc-500 transition" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">Service Needed</label>
+          <select id="q-service" class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white transition">
+            <option value="Collision Repair Estimate">Collision Repair Estimate</option>
+            <option value="Mobile Repair at My Location">Mobile Repair at My Location</option>
+            <option value="Dent & Scratch Repair">Dent & Scratch Repair</option>
+            <option value="Bumper Repair & Paint">Bumper Repair & Paint</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-1.5">Tell us what happened</label>
+          <textarea id="q-details" rows="3" placeholder="Tell us what happened or what your car needs..."
+            class="w-full rounded-xl bg-black border border-white/15 focus:border-brand-red focus:outline-none px-4 py-3 text-sm text-white placeholder-zinc-500 transition"></textarea>
+        </div>
+
+        <button type="submit" class="btn-shine w-full flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-dark text-carbon-950 font-extrabold text-base py-4 rounded-xl shadow-wa-glow transition cursor-pointer">
+          <span>💬 GET A FREE QUOTE ON WHATSAPP</span>
+        </button>
+
+        <a href="#" data-msg-link target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 bg-black hover:bg-carbon-800 text-zinc-200 border border-messenger/40 font-semibold text-sm py-3.5 rounded-xl transition">
+          <span>Or Chat with Us on Facebook Messenger</span>
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+  <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-zinc-500 bg-black">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 <strong class="text-white">One Click Collision Repair Miami</strong> • Proudly Serving Miami, Hollywood & Surrounding Areas.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" data-wa-link class="text-whatsapp hover:underline font-medium">WhatsApp Quote</a>
+        <a href="#" data-msg-link target="_blank" rel="noopener" class="text-sky-400 hover:underline font-medium">Facebook Messenger</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SCRIPTS
+  =========================================== -->
+  <script>
+    const WHATSAPP_NUMBER = "5493513102089";
+    const DEFAULT_WA_MESSAGE = "Hi One Click Collision Repair Miami! I'd like to get a FREE QUOTE. Here are the photos of my vehicle's damage:";
+    const MESSENGER_URL = "https://www.facebook.com/reel/1459970119356056";
+
+    const defaultWaUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_WA_MESSAGE)}`;
+    document.querySelectorAll('[data-wa-link]').forEach(el => {
+      el.setAttribute('href', defaultWaUrl);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener');
+    });
+
+    document.querySelectorAll('[data-msg-link]').forEach(el => {
+      el.setAttribute('href', MESSENGER_URL);
+    });
+
+    // =====================================================
+    // 4 OFFICIAL FACEBOOK REELS
+    // =====================================================
+    function extractFbVideoId(url) {
+      const match = url.match(/(?:reel\/|videos\/|v=)(\d+)/);
+      return match ? match[1] : null;
+    }
+
+    function openReelPopup(url) {
+      const width = 420;
+      const height = 740;
+      const left = (window.screen.width / 2) - (width / 2);
+      const top = (window.screen.height / 2) - (height / 2);
+      window.open(url, 'OneClickReel', `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`);
+    }
+
+    const FB_REELS = [
+      {
+        badge: "Collision Repair",
+        title: "Collision & Paint Restoration",
+        url: "https://www.facebook.com/reel/1459970119356056"
+      },
+      {
+        badge: "Mobile Service",
+        title: "On-Site Mobile Auto Body",
+        url: "https://www.facebook.com/reel/1408134933977664"
+      },
+      {
+        badge: "Dent Pulling",
+        title: "Quarter Panel & Dent Repair",
+        url: "https://www.facebook.com/reel/1318434550142141"
+      },
+      {
+        badge: "Bumper & Paint",
+        title: "Showroom Gloss Finish",
+        url: "https://www.facebook.com/reel/845079965128637"
+      }
+    ];
+
+    const reelsGrid = document.getElementById('fb-reels-grid');
+    reelsGrid.innerHTML = FB_REELS.map((item) => {
+      const videoId = extractFbVideoId(item.url);
+      const canonicalVideoUrl = videoId 
+        ? `https://www.facebook.com/watch/?v=${videoId}` 
+        : item.url;
+
+      const embedSrc = `https://www.facebook.com/plugins/video.php?height=476&href=${encodeURIComponent(canonicalVideoUrl)}&show_text=false&width=267&t=0`;
+
+      return `
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col border border-white/10">
+          <div class="relative w-full bg-carbon-900 flex flex-col items-center justify-center min-h-[476px] overflow-hidden">
+            
+            <!-- Fallback behind iframe -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
+              <div class="w-12 h-12 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red mb-3">
+                ▶
+              </div>
+              <p class="text-xs font-bold text-white mb-1">${item.title}</p>
+              <p class="text-[11px] text-zinc-400 mb-4">Click below if your browser blocks video embeds:</p>
+              <button onclick="openReelPopup('${item.url}')" class="text-xs font-bold bg-brand-red hover:bg-brand-redGlow text-white px-4 py-2.5 rounded-xl shadow-red-glow transition">
+                Watch Reel Pop-Up ↗
+              </button>
+            </div>
+
+            <!-- Official Facebook Video Plugin Iframe -->
+            <iframe 
+              src="${embedSrc}" 
+              width="267" 
+              height="476" 
+              class="relative z-10 mx-auto"
+              style="border:none;overflow:hidden;" 
+              scrolling="no" 
+              frameborder="0" 
+              allowfullscreen="true" 
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+
+            <div class="absolute top-3 left-3 z-20 pointer-events-none bg-black/85 border border-brand-red/50 text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+              ${item.badge}
+            </div>
+          </div>
+
+          <div class="p-4 flex items-center justify-between gap-2 bg-carbon-950 border-t border-white/5">
+            <div>
+              <h3 class="font-display font-bold text-sm text-white">${item.title}</h3>
+              <p class="text-[11px] text-zinc-400">One Click Collision Miami</p>
+            </div>
+            <button onclick="openReelPopup('${item.url}')" class="shrink-0 text-xs font-bold text-brand-red hover:text-white bg-brand-red/15 hover:bg-brand-red px-2.5 py-1.5 rounded-lg border border-brand-red/30 transition cursor-pointer">
+              Play ↗
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Quote Form
+    document.getElementById('wa-quote-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('q-name').value.trim();
+      const vehicle = document.getElementById('q-vehicle').value.trim();
+      const area = document.getElementById('q-area').value.trim() || 'Miami area';
+      const service = document.getElementById('q-service').value;
+      const details = document.getElementById('q-details').value.trim();
+
+      const text = [
+        `Hi *One Click Collision Repair Miami*! 👋`,
+        `I'd like to request a *FREE QUOTE*:`,
+        `• *Name:* ${name}`,
+        `• *Vehicle:* ${vehicle}`,
+        `• *Area:* ${area}`,
+        `• *Service:* ${service}`,
+        details ? `• *Details:* ${details}` : null,
+        ``,
+        `📸 *Sending photos of the damage now:*`
+      ].filter(Boolean).join('\n');
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    });
+  </script>
+</body>
+</html>
